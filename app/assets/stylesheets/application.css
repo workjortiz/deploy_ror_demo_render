@@ -13,3 +13,20 @@
  *= require_tree .
  *= require_self
  */
+
+ .form-group {
+    display: flex;
+    align-items: center;    /* Aligns label and input vertically */
+    margin-bottom: 15px;    /* Space between form groups */
+ }
+
+ .form-label {
+    margin-right: 10px;     /* Space between label and input */
+    font-weight: bold;      /* Make label text bold */
+ }
+
+ .form-input {
+    padding: 8px;                   /* Padding inside the input */
+    border: 1px solid #ccc;       /* Border styling */
+    border-radius: 4px;             /* Rounded corners */
+ }

@@ -11,29 +11,29 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+  <h1>Bienvenido a mi portafolio</h1>
+  <p>Hagamos algunas dinamicas, pero para empezar ingresa la siguiente información</p>
+
+  <div class="form-group">
+    <%= form.label "Ingresar Nombre", style: "display: block", class: "form-label" %>
+    <%= form.text_field :name , class: "form-input" %>
   </div>
 
-  <div>
-    <%= form.label :country, style: "display: block" %>
-    <%= form.text_field :country %>
+  <div class="form-group">
+    <%= form.label "Selecciona País", style: "display: block", class: "form-label"  %>
+    <%= form.text_field :country, class: "form-input" %>
   </div>
 
-  <div>
-    <%= form.label :original_content, style: "display: block" %>
-    <%= form.text_field :original_content %>
-  </div>
+  <h1>Dinamica</h1>
+  <p>En el siguiente texto describamos un objeto con sus atributos y valores, ejemplo diremos carro.color = rojo;</p>
+  <p>Finalizaremos con punto y coma cada descripción de objeto.</p>
+  <p>Al presionare procesar se realizara un parsing de lo ingresado y se estructura un JSON de dicho objeto. A su vez se generara una URL de exposición de información con un token unico para acceder a la URL.</p>
+  <p>Tu objeto quedara registrado en base de datos para futuras re-consultas</p>
+
 
   <div>
-    <%= form.label :parsing_content, style: "display: block" %>
-    <%= form.text_field :parsing_content %>
-  </div>
-
-  <div>
-    <%= form.label :token, style: "display: block" %>
-    <%= form.text_field :token %>
+    <%= form.label "Describir", style: "display: block", class: "form-label"  %>
+    <%= form.text_area :original_content, class: "form-input" %>
   </div>
 
   <div>
