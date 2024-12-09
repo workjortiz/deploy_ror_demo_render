@@ -4,6 +4,7 @@
 
 <h1>Challenges</h1>
 
+
 <%= link_to "(+) New Challenge", new_challenge_path, class: 'round-btn' %>
 
 <table>
@@ -13,7 +14,7 @@
       <th>Country</th>
       <th>Content Summary</th>
       <th>Created At</th>
-      <th>Actions</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -24,8 +25,7 @@
         <td><%= challenge.original_content.length %></td>
         <td><%= challenge.created_at.strftime("%d/%m/%Y %H:%M:%S") %></td>
         <td>
-          <%= link_to 'Show', challenge_path(challenge), class: 'round-btn'  %>
-          <%= link_to 'Delete', challenge_path(challenge), method: :delete, data: { confirm: 'Are you sure?' }, class: 'round-btn' %>
+          <%= link_to image_tag('eye-outline.svg', alt: 'Show', class: 'round-icon-btn'), challenge_path(challenge), class: 'round-btn'  %>
         </td>
       </tr>
     <% end %>
