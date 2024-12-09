@@ -30,3 +30,24 @@
     border: 1px solid #ccc;       /* Border styling */
     border-radius: 4px;             /* Rounded corners */
  }
+
+ /*-------------------------------------------*/
+
+ .round-btn {
+   background-color: #ffd700;
+   color: black !important;
+   margin: 1px;
+   padding: 5px;
+   font-weight: bold;
+   font: black;
+   border: none;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   cursor: pointer;
+   transition: background-color 0.3s;
+ }
+ 
+ .round-btn:hover {
+   background-color: yellow;
+ }

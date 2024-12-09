@@ -6,7 +6,7 @@ class ChallengesController < ApplicationController
 
   # GET /challenges or /challenges.json
   def index
-    @challenges = Challenge.all
+    @challenges = Challenge.order(created_at: :desc)
   end
 
   # GET /challenges/1 or /challenges/1.json
@@ -16,9 +16,6 @@ class ChallengesController < ApplicationController
   # GET /challenges/new
   def new
     @challenge = Challenge.new
-
-
-
   end
 
   # GET /challenges/1/edit

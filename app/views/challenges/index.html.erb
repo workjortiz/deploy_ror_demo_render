@@ -4,13 +4,32 @@
 
 <h1>Challenges</h1>
 
-<div id="challenges">
-  <% @challenges.each do |challenge| %>
-    <%= render challenge %>
-    <p>
-      <%= link_to "Show this challenge", challenge %>
-    </p>
-  <% end %>
-</div>
+<%= link_to "(+) New Challenge", new_challenge_path, class: 'round-btn' %>
 
-<%= link_to "New challenge", new_challenge_path %>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Country</th>
+      <th>Content Summary</th>
+      <th>Created At</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @challenges.each do |challenge| %>
+      <tr>
+        <td><%= challenge.name %></td>
+        <td><%= challenge.country %></td>
+        <td><%= challenge.original_content.length %></td>
+        <td><%= challenge.created_at.strftime("%d/%m/%Y %H:%M:%S") %></td>
+        <td>
+          <%= link_to 'Show', challenge_path(challenge), class: 'round-btn'  %>
+          <%= link_to 'Delete', challenge_path(challenge), method: :delete, data: { confirm: 'Are you sure?' }, class: 'round-btn' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
