@@ -1,6 +1,9 @@
 class ChallengesController < ApplicationController
   before_action :set_challenge, only: %i[ show edit update destroy ]
 
+  require 'net/http'
+  require 'json'
+
   # GET /challenges or /challenges.json
   def index
     @challenges = Challenge.all
@@ -13,6 +16,9 @@ class ChallengesController < ApplicationController
   # GET /challenges/new
   def new
     @challenge = Challenge.new
+
+
+
   end
 
   # GET /challenges/1/edit

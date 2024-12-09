@@ -19,6 +19,12 @@ gem "jbuilder"
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
 
+#----[CUSTOM GEMS - BEGIN]----
+
+gem 'country_select', '~> 8.0'
+
+#----[CUSTOM GEMS - END]----
+
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
 
