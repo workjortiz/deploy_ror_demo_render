@@ -1,6 +1,15 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @challenge %>
+<h3>Tu Resultado</h3>
+<p>Hola <%= @challenge.name %> a continuación el resultado de tu procesamiento de información. Puedes copiarlo o usar un REST GET con la siguiente URL para obtener el JSON</p>
+
+<div class='json-box'>
+  <% begin %>
+  <pre><%= JSON.pretty_generate(JSON.parse(@challenge.parsing_content.to_s)) %></pre>
+  <% rescue %>
+    <p>Opps!!! este registro esta mal diseñado</p>
+  <% end %>
+</div>
 
 <div>
   <%= link_to "Back to challenges", challenges_path %>

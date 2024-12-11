@@ -14,7 +14,7 @@ RSpec.describe Challenge, type: :model do
         expect(actual).to eq("{carro:{color:'rojo'}}")
     end
 
-    it 'Testing Challenge Process Content :: Case 1' do
+    it 'Testing Challenge Process Content :: Case 2' do
         c = Challenge.new
         c.original_content = "pared.altura=10;orden.precio=100;"
 

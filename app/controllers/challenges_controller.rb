@@ -35,6 +35,9 @@ class ChallengesController < ApplicationController
       end
     else
       respond_to do |format|
+
+        @challenge.parsing_content = @result
+
         if @challenge.save
           puts "MODEL SAVE"
           format.html { redirect_to @challenge, notice: "Challenge was successfully created." }

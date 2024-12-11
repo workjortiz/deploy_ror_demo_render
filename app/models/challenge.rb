@@ -13,14 +13,14 @@ class Challenge < ApplicationRecord
 
                 sentence_arr.each do |this_sentence|
                     tmp_phase1 = this_sentence.split(".")
-                    sentece_obj = tmp_phase1[0]
+                    sentece_obj = '"'+tmp_phase1[0]+'"'
                     process_string += sentece_obj + ":{"
 
                     tmp_phase2 = tmp_phase1[1].split("=")
                     sentence_attr = tmp_phase2[0]
                     sentence_val = tmp_phase2[1]
 
-                    process_string += sentence_attr+":'"+sentence_val+"'},"
+                    process_string += '"'+sentence_attr+'"' + ":" + '"'+sentence_val+'"' + "},"
                 end
             else
                 error_parse_arr.push("Sentencia revisada. Contenido ingresado no valido.\nEvaluación: #{this_sentence}")
