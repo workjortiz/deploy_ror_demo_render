@@ -1,5 +1,5 @@
 class ChallengesController < ApplicationController
-  before_action :set_challenge, only: %i[ show edit update destroy ]
+  before_action :set_challenge, only: %i[ show destroy ]
 
   require 'net/http'
   require 'json'
@@ -37,29 +37,16 @@ class ChallengesController < ApplicationController
       respond_to do |format|
 
         @challenge.parsing_content = @result
+        @challenge.token = SecureRandom.base64(10)
 
         if @challenge.save
           puts "MODEL SAVE"
           format.html { redirect_to @challenge, notice: "Challenge was successfully created." }
-          format.json { render :show, status: :created, location: @challenge }
         else
           puts "ERRORS VALIDATE"
           format.html { render :new, status: :unprocessable_entity }
           format.json { render json: @challenge.errors, status: :unprocessable_entity }
         end
-      end
-    end
-  end
-
-  # PATCH/PUT /challenges/1 or /challenges/1.json
-  def update
-    respond_to do |format|
-      if @challenge.update(challenge_params)
-        format.html { redirect_to @challenge, notice: "Challenge was successfully updated." }
-        format.json { render :show, status: :ok, location: @challenge }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @challenge.errors, status: :unprocessable_entity }
       end
     end
   end

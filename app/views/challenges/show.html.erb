@@ -1,7 +1,7 @@
 <p style="color: green"><%= notice %></p>
 
 <h3>Tu Resultado</h3>
-<p>Hola <%= @challenge.name %> a continuación el resultado de tu procesamiento de información. Puedes copiarlo o usar un REST GET con la siguiente URL para obtener el JSON</p>
+<p>Hola <%= @challenge.name %> a continuación el resultado de tu procesamiento de información. Puedes copiarlo o usar un REST GET con la siguiente (<a href="/api/v1/challenges/show?token=<%= @challenge.token %>" target="_blank">Link</a>) para obtener el JSON</p>
 
 <div class='json-box'>
   <% begin %>

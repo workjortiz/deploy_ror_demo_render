@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  namespace :api do
+    namespace :v1 do
+      get "challenges/show"
+    end
+  end
   resources :challenges
   resources :posts
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
