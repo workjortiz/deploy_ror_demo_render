@@ -25,14 +25,25 @@ class ChallengesController < ApplicationController
   # POST /challenges or /challenges.json
   def create
     @challenge = Challenge.new(challenge_params)
+    @result = @challenge.process_content
 
-    respond_to do |format|
-      if @challenge.save
-        format.html { redirect_to @challenge, notice: "Challenge was successfully created." }
-        format.json { render :show, status: :created, location: @challenge }
-      else
+    if @result.class == Array
+      puts "ERRORS METHOD"
+      respond_to do |format|
         format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @challenge.errors, status: :unprocessable_entity }
+        format.json { render json: @result, status: :unprocessable_entity }
+      end
+    else
+      respond_to do |format|
+        if @challenge.save
+          puts "MODEL SAVE"
+          format.html { redirect_to @challenge, notice: "Challenge was successfully created." }
+          format.json { render :show, status: :created, location: @challenge }
+        else
+          puts "ERRORS VALIDATE"
+          format.html { render :new, status: :unprocessable_entity }
+          format.json { render json: @challenge.errors, status: :unprocessable_entity }
+        end
       end
     end
   end

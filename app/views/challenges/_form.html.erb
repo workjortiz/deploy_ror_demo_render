@@ -11,6 +11,17 @@
     </div>
   <% end %>
 
+  <% if @result.class == Array %>
+    <div style="color: red">
+      <h2>Some errors detected:</h2>
+      <ul>
+        <% @result.each do |error| %>
+          <li><%= error.to_s %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
   <h1>Bienvenido a mi portafolio</h1>
   <p>Hagamos algunas dinamicas, pero para empezar ingresa la siguiente información</p>
 
