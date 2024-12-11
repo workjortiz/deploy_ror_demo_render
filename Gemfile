@@ -21,7 +21,7 @@ gem "jbuilder"
 
 #----[CUSTOM GEMS - BEGIN]----
 
-gem 'country_select', '~> 8.0'
+gem 'country_select', '~> 10.0'
 gem 'jquery-rails'
 
 #----[CUSTOM GEMS - END]----
