@@ -1,3 +1,14 @@
+<script>
+  function copyText(idx){
+    console.log("PUSH IDX: "+idx)
+    const source_element = document.getElementById("src_txt_example_"+idx);
+
+    const target = document.getElementById("challenge_original_content");
+    target.value += source_element.innerText;
+  }
+</script>
+
+
 <%= form_with(model: challenge) do |form| %>
   <% if challenge.errors.any? %>
     <div style="color: red">
@@ -40,54 +51,7 @@
   <p>Estructura:</p>
   <p>objeto . atributo = valor ;</p>
   <p>Cada objeto definiremos su atributo por punto. Añadiremos un igual para especificar el valor del atributo. Finalizaremos con punto y coma cada descripción de objeto.</p>
-  <p>Ejemplo:</p>
-  <table>
-    <tr>
-      <td>El carro color rojo</td>
-      <td>carro.color=rojo;</td>
-      <td>
-        <button class="round-btn">
-          <%= image_tag 'copiar.png', alt: 'Copy Image', class: 'round-icon-btn' %>
-        </button>
-      </td>
-    </tr>
-    <tr>
-      <td>La pared con altura 10 metros</td>
-      <td>pared.altura=10;</td>
-      <td>
-        <button class="round-btn">
-          <%= image_tag 'copiar.png', alt: 'Copy Image', class: 'round-icon-btn' %>
-        </button>
-      </td>
-    </tr>
-    <tr>
-      <td>El precio de la orden fue 100</td>
-      <td>orden.precio=100;</td>
-      <td>
-        <button class="round-btn">
-          <%= image_tag 'copiar.png', alt: 'Copy Image', class: 'round-icon-btn' %>
-        </button>
-      </td>
-    </tr>
-    <tr>
-      <td>La Pizza es tamaño XL</td>
-      <td>pizza.tipo=XL;</td>
-      <td>
-        <button class="round-btn">
-          <%= image_tag 'copiar.png', alt: 'Copy Image', class: 'round-icon-btn' %>
-        </button>
-      </td>
-    </tr>
-    <tr>
-      <td>El modelo de teléfono es Flip6</td>
-      <td>telefono.modelo=Flip6;</td>
-      <td>
-        <button class="round-btn">
-          <%= image_tag 'copiar.png', alt: 'Copy Image', class: 'round-icon-btn' %>
-        </button>
-      </td>
-    </tr>
-  </table>
+  
 
   <p>Al presionar procesar se realizara un parsing de lo ingresado y se estructura un JSON de dicho objeto. A su vez se generara una URL de exposición de información con un token unico para acceder a la URL.</p>
   <p>Tu objeto quedara registrado en base de datos para futuras re-consultas</p>
@@ -102,3 +66,52 @@
     <%= form.submit %>
   </div>
 <% end %>
+
+<p>Ejemplos para copiar:</p>
+  <table>
+    <tr>
+      <td>El carro color rojo</td>
+      <td><p id="src_txt_example_1">carro.color=rojo;</p></td>
+      <td>
+        <button class="round-btn" onClick="copyText(1)">
+          <%= image_tag 'copiar.png', alt: 'Copy Image', class: 'round-icon-btn' %>
+        </button>
+      </td>
+    </tr>
+    <tr>
+      <td>La pared con altura 10 metros</td>
+      <td><p id="src_txt_example_2">pared.altura=10;</p></td>
+      <td>
+        <button class="round-btn" onClick="copyText(2)">
+          <%= image_tag 'copiar.png', alt: 'Copy Image', class: 'round-icon-btn' %>
+        </button>
+      </td>
+    </tr>
+    <tr>
+      <td>El precio de la orden fue 100</td>
+      <td><p id="src_txt_example_3">orden.precio=100;</p></td>
+      <td>
+        <button class="round-btn" onClick="copyText(3)">
+          <%= image_tag 'copiar.png', alt: 'Copy Image', class: 'round-icon-btn' %>
+        </button>
+      </td>
+    </tr>
+    <tr>
+      <td>La Pizza es tamaño XL</td>
+      <td><p id="src_txt_example_4">pizza.tipo=XL;</p></td>
+      <td>
+        <button class="round-btn" onClick="copyText(4)">
+          <%= image_tag 'copiar.png', alt: 'Copy Image', class: 'round-icon-btn' %>
+        </button>
+      </td>
+    </tr>
+    <tr>
+      <td>El modelo de teléfono es Flip6</td>
+      <td><p id="src_txt_example_5">telefono.modelo=Flip6;</p></td>
+      <td>
+        <button class="round-btn" onClick="copyText(5)">
+          <%= image_tag 'copiar.png', alt: 'Copy Image', class: 'round-icon-btn' %>
+        </button>
+      </td>
+    </tr>
+  </table>
