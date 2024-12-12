@@ -42,9 +42,51 @@
   <p>Cada objeto definiremos su atributo por punto. Añadiremos un igual para especificar el valor del atributo. Finalizaremos con punto y coma cada descripción de objeto.</p>
   <p>Ejemplo:</p>
   <table>
-    <tr><td>El carro color rojo</td><td>carro.color=rojo;</td></tr>
-    <tr><td>La pared con altura 10 metros</td><td>pared.altura=10;</td></tr>
-    <tr><td>El precio de la orden fue 100</td><td>orden.precio=100;</td></tr>
+    <tr>
+      <td>El carro color rojo</td>
+      <td>carro.color=rojo;</td>
+      <td>
+        <button class="round-btn">
+          <%= image_tag 'copiar.png', alt: 'Copy Image', class: 'round-icon-btn' %>
+        </button>
+      </td>
+    </tr>
+    <tr>
+      <td>La pared con altura 10 metros</td>
+      <td>pared.altura=10;</td>
+      <td>
+        <button class="round-btn">
+          <%= image_tag 'copiar.png', alt: 'Copy Image', class: 'round-icon-btn' %>
+        </button>
+      </td>
+    </tr>
+    <tr>
+      <td>El precio de la orden fue 100</td>
+      <td>orden.precio=100;</td>
+      <td>
+        <button class="round-btn">
+          <%= image_tag 'copiar.png', alt: 'Copy Image', class: 'round-icon-btn' %>
+        </button>
+      </td>
+    </tr>
+    <tr>
+      <td>La Pizza es tamaño XL</td>
+      <td>pizza.tipo=XL;</td>
+      <td>
+        <button class="round-btn">
+          <%= image_tag 'copiar.png', alt: 'Copy Image', class: 'round-icon-btn' %>
+        </button>
+      </td>
+    </tr>
+    <tr>
+      <td>El modelo de teléfono es Flip6</td>
+      <td>telefono.modelo=Flip6;</td>
+      <td>
+        <button class="round-btn">
+          <%= image_tag 'copiar.png', alt: 'Copy Image', class: 'round-icon-btn' %>
+        </button>
+      </td>
+    </tr>
   </table>
 
   <p>Al presionar procesar se realizara un parsing de lo ingresado y se estructura un JSON de dicho objeto. A su vez se generara una URL de exposición de información con un token unico para acceder a la URL.</p>
