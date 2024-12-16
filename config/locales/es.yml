@@ -1,0 +1,40 @@
+es:
+  challenge:
+    form: 
+      title: "Bienvenido a mi portafolio"
+      instruction_1: "Hagamos algunas dinamicas, pero para empezar ingresa la siguiente información"
+      instruction_2: "En el siguiente texto describamos un objeto con sus atributos y valores."
+      instruction_3: "Cada objeto definiremos su atributo por punto. Añadiremos un igual para especificar el valor del atributo. Finalizaremos con punto y coma cada descripción de objeto."
+      instruction_4: "Al presionar procesar se realizara un parsing de lo ingresado y se estructura un JSON de dicho objeto. A su vez se generara una URL de exposición de información con un token unico para acceder a la URL."
+      instruction_5: "Tu objeto quedara registrado en base de datos para futuras re-consultas"
+      errors:
+        form_validation: "no se ha podido guardar este registro"
+        form_description: "Se han detectado algunos errores"
+    attr:
+      name:
+        input: "Ingresar nombre"
+        raw: "Nombre"
+      country:
+        input: "Selecciona país"
+        raw: "País"
+      original_content:
+        input: "Describir"
+        raw: "Contenido Original"
+  words:
+    dynamic: "Dinamica"
+    structure: "Estructura"
+    object: "Objeto"
+    attribute: "Atributo"
+    value: "Valor"
+  sentence:
+    describe_examples: "Ejemplos para copiar"
+    example_str_1: "El carro color rojo"
+    example_pgr_1: "carro.color=rojo;"
+    example_str_2: "La pared con altura 10 metros"
+    example_pgr_2: "pared.altura=10;"
+    example_str_3: "El precio de la orden fue 100"
+    example_pgr_3: "orden.precio=100;"
+    example_str_4: "La Pizza es tamaño XL"
+    example_pgr_4: "pizza.tipo=XL;"
+    example_str_5: "El modelo de teléfono es Flip6"
+    example_pgr_5: "telefono.modelo=Flip6;"

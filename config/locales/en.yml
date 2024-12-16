@@ -1,31 +1,40 @@
-# Files in the config/locales directory are used for internationalization and
-# are automatically loaded by Rails. If you want to use locales other than
-# English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t "hello"
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t("hello") %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more about the API, please read the Rails Internationalization guide
-# at https://guides.rubyonrails.org/i18n.html.
-#
-# Be aware that YAML interprets the following case-insensitive strings as
-# booleans: `true`, `false`, `on`, `off`, `yes`, `no`. Therefore, these strings
-# must be quoted to be interpreted as strings. For example:
-#
-#     en:
-#       "yes": yup
-#       enabled: "ON"
-
-en:
-  hello: "Hello world"
+es:
+  challenge:
+    form: 
+      title: "Welcome to my portfolio"
+      instruction_1: "Let's do some dynamics, but to start enter the following information"
+      instruction_2: "In the following text we describe an object with its attributes and values."
+      instruction_3: "Each object we will define its attribute by point. We will add an equal to specify the value of the attribute. We will end each object description with a semicolon."
+      instruction_4: "When you press process, a parsing of what was entered will be performed and a JSON of said object will be structured. In turn, an information display URL will be generated with a unique token to access the URL."
+      instruction_5: "Your object will be registered in the database for future re-consultations."
+      errors:
+        form_validation: "prohibited this challenge from being saved"
+        form_description: "Some errors detected"
+    attr:
+      name:
+        input: "Enter name"
+        raw: "Name"
+      country:
+        input: "Select country"
+        raw: "Country"
+      original_content:
+        input: "Describe"
+        raw: "Original Content"
+  words:
+    dynamic: "Dynamic"
+    structure: "Structure"
+    object: "Object"
+    attribute: "Attribute"
+    value: "Value"
+  sentence:
+    describe_examples: "Examples to copy"
+    example_str_1: "The car color red"
+    example_pgr_1: "car.color=red;"
+    example_str_2: "The wall with height 10 meters"
+    example_pgr_2: "wall.height=10;"
+    example_str_3: "The price for the order was 100"
+    example_pgr_3: "order.price=100;"
+    example_str_4: "The Pizza size XL"
+    example_pgr_4: "pizza.type=XL;"
+    example_str_5: "The phone model is Flip6"
+    example_pgr_5: "phone.model=Flip6;"

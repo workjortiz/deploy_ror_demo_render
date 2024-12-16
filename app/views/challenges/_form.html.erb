@@ -12,7 +12,7 @@
 <%= form_with(model: challenge) do |form| %>
   <% if challenge.errors.any? %>
     <div style="color: red">
-      <h2><%= pluralize(challenge.errors.count, "error") %> prohibited this challenge from being saved:</h2>
+      <h2><%= pluralize(challenge.errors.count, "error") %> <%= t('challenge.form.errors.form_validation') %></h2>
 
       <ul>
         <% challenge.errors.each do |error| %>
@@ -24,7 +24,7 @@
 
   <% if @result.class == Array %>
     <div style="color: red">
-      <h2>Some errors detected:</h2>
+      <h2><%= t('challenge.form.errors.form_description') %>:</h2>
       <ul>
         <% @result.each do |error| %>
           <li><%= error.to_s %></li>
@@ -33,32 +33,32 @@
     </div>
   <% end %>
 
-  <h1>Bienvenido a mi portafolio</h1>
-  <p>Hagamos algunas dinamicas, pero para empezar ingresa la siguiente información</p>
+  <h1><%= t('challenge.form.title') %></h1>
+  <p><%= t('challenge.form.instruction_1') %></p>
 
   <div class="form-group">
-    <%= form.label "Ingresar Nombre", style: "display: block", class: "form-label" %>
+    <%= form.label t('challenge.attr.name.input'), style: "display: block", class: "form-label" %>
     <%= form.text_field :name, maxlength: 50 , class: "form-input" %>
   </div>
 
   <div class="form-group">
-    <%= form.label "Selecciona País", style: "display: block", class: "form-label"  %>
+    <%= form.label t('challenge.attr.country.input'), style: "display: block", class: "form-label"  %>
     <%= form.country_select :country, class: "form-input" %>
   </div>
 
-  <h1>Dinamica</h1>
-  <p>En el siguiente texto describamos un objeto con sus atributos y valores.</p>
-  <p>Estructura:</p>
-  <p>objeto . atributo = valor ;</p>
-  <p>Cada objeto definiremos su atributo por punto. Añadiremos un igual para especificar el valor del atributo. Finalizaremos con punto y coma cada descripción de objeto.</p>
+  <h1><%= t('words.dynamic') %></h1>
+  <p><%= t('challenge.form.instruction_2') %></p>
+  <p><%= t('words.structure') %>:</p>
+  <p><%= t('words.object') %> . <%= t('words.attribute') %> = <%= t('words.value') %> ;</p>
+  <p><%= t('challenge.form.instruction_3') %></p>
   
 
-  <p>Al presionar procesar se realizara un parsing de lo ingresado y se estructura un JSON de dicho objeto. A su vez se generara una URL de exposición de información con un token unico para acceder a la URL.</p>
-  <p>Tu objeto quedara registrado en base de datos para futuras re-consultas</p>
+  <p><%= t('challenge.form.instruction_4') %></p>
+  <p><%= t('challenge.form.instruction_5') %></p>
 
 
   <div>
-    <%= form.label "Describir", style: "display: block", class: "form-label"  %>
+    <%= form.label t('challenge.attr.original_content.input'), style: "display: block", class: "form-label"  %>
     <%= form.text_area :original_content, maxlength: 250, class: "form-input" %>
   </div>
 
@@ -67,11 +67,11 @@
   </div>
 <% end %>
 
-<p>Ejemplos para copiar:</p>
+<p><%= t('sentence.describe_examples') %>:</p>
   <table>
     <tr>
-      <td>El carro color rojo</td>
-      <td><p id="src_txt_example_1">carro.color=rojo;</p></td>
+      <td><%= t('sentence.example_str_1') %></td>
+      <td><p id="src_txt_example_1"><%= t('sentence.example_pgr_1') %></p></td>
       <td>
         <button class="round-btn" onClick="copyText(1)">
           <%= image_tag 'copiar.png', alt: 'Copy Image', class: 'round-icon-btn' %>
@@ -79,8 +79,8 @@
       </td>
     </tr>
     <tr>
-      <td>La pared con altura 10 metros</td>
-      <td><p id="src_txt_example_2">pared.altura=10;</p></td>
+      <td><%= t('sentence.example_str_2') %></td>
+      <td><p id="src_txt_example_2"><%= t('sentence.example_pgr_2') %></p></td>
       <td>
         <button class="round-btn" onClick="copyText(2)">
           <%= image_tag 'copiar.png', alt: 'Copy Image', class: 'round-icon-btn' %>
@@ -88,8 +88,8 @@
       </td>
     </tr>
     <tr>
-      <td>El precio de la orden fue 100</td>
-      <td><p id="src_txt_example_3">orden.precio=100;</p></td>
+      <td><%= t('sentence.example_str_3') %></td>
+      <td><p id="src_txt_example_3"><%= t('sentence.example_pgr_3') %></p></td>
       <td>
         <button class="round-btn" onClick="copyText(3)">
           <%= image_tag 'copiar.png', alt: 'Copy Image', class: 'round-icon-btn' %>
@@ -97,8 +97,8 @@
       </td>
     </tr>
     <tr>
-      <td>La Pizza es tamaño XL</td>
-      <td><p id="src_txt_example_4">pizza.tipo=XL;</p></td>
+      <td><%= t('sentence.example_str_4') %></td>
+      <td><p id="src_txt_example_4"><%= t('sentence.example_pgr_4') %></p></td>
       <td>
         <button class="round-btn" onClick="copyText(4)">
           <%= image_tag 'copiar.png', alt: 'Copy Image', class: 'round-icon-btn' %>
@@ -106,8 +106,8 @@
       </td>
     </tr>
     <tr>
-      <td>El modelo de teléfono es Flip6</td>
-      <td><p id="src_txt_example_5">telefono.modelo=Flip6;</p></td>
+      <td><%= t('sentence.example_str_5') %></td>
+      <td><p id="src_txt_example_5"><%= t('sentence.example_pgr_5') %></p></td>
       <td>
         <button class="round-btn" onClick="copyText(5)">
           <%= image_tag 'copiar.png', alt: 'Copy Image', class: 'round-icon-btn' %>
