@@ -1,24 +1,19 @@
-# README
+Construido con:
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Ruby 3.2.4
+Rails 7.2.2
+Base datos PostgreSQL
+Desplegado en Render
 
-Things you may want to cover:
+Practicas:
+* Versionamiento de API
+* Generación de tokens para consultas de registros simulando UUID
+* Registro de entradas en base de datos
+* Incluido CSS simple
+* Uso de "continues deployment" usando Pipeline de Render
+* Desplegado en Render
 
-* Ruby version
+Que hace:
 
-* System dependencies
+Registro de cadena de texto con cierta estructura que se procede a parsear para generar un JSON y exponerlo en un servicio API usando tokens de seguridad para no permitir el acceso libre a cualquier registro.
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
