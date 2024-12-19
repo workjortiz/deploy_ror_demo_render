@@ -14,7 +14,30 @@
  *= require_self
  */
 
-    /*----------------[LABEL+INPUT HORIZONTAL]---------------------------*/
+   /*----------------[HEADER]---------------------------*/
+
+   .header-translate-container{
+      display: flex;
+      align-items: left;
+      padding: 10px;
+   }
+
+   .translate-btn{
+      padding: 10px 15px;
+      font-size: 12px;
+      font-weight: bold;
+      color: black !important;
+      text-decoration: none;
+      background-color: #ffd700;
+      border-radius: 4px;
+      transition: background-color 0.3s;
+      margin-left: 5px;
+   }
+
+   .translate-btn:hover{
+      background-color: yellow;
+   }
+   /*----------------[LABEL+INPUT HORIZONTAL]---------------------------*/
 
    .form-group {
       display: flex;
