@@ -1,4 +1,8 @@
 es:
+  will_paginate:
+    page_gap: "&hellip;"
+    previous_label: "atras"
+    next_label: "siguiente"
   challenge:
     form: 
       title: "Bienvenido a mi portafolio"

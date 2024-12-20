@@ -7,6 +7,10 @@
 
 <%= link_to "(+) New Challenge", new_challenge_path, class: 'round-btn' %>
 
+<div class="digg_pagination">
+  <%= will_paginate @challenges, :previous_label => t("will_paginate.previous_label"), :next_label => t("will_paginate.next_label"), :container => false %>
+</div>
+
 <table>
   <thead>
     <tr>

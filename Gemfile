@@ -23,6 +23,7 @@ gem "jbuilder"
 
 gem 'country_select', '~> 8.0'
 gem 'jquery-rails'
+gem 'will_paginate', '~> 4.0'
 
 #----[CUSTOM GEMS - END]----
 

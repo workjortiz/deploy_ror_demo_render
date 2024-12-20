@@ -1,4 +1,8 @@
 en:
+  will_paginate:
+    page_gap: "&hellip;"
+    previous_label: "previous"
+    next_label: "next"
   challenge:
     form: 
       title: "Welcome to my portfolio"
