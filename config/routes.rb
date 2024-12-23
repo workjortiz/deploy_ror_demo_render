@@ -2,9 +2,11 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       get "challenges/show"
+      post "challenges/delete"
     end
   end
   resources :challenges
+  get "challenges/delete/success" => "challenges#delete_success", :as => "challenge_delete_success"
   resources :posts
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

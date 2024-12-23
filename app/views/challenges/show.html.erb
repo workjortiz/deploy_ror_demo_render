@@ -6,9 +6,25 @@
   function openModalAction(){
     document.getElementById('myModal').style.display = 'block';
   }
-
+  
   function confirmAction(id){
     console.log("id: "+id);
+
+    const postData = { id: id };
+    $.ajax({
+        url: '/api/v1/challenges/delete',
+        type: 'POST',
+        data: JSON.stringify(postData),
+        contentType: 'application/json',
+        success: function(response){
+          if(response.success){            
+            window.location.href = '/challenges/delete/success';
+          }
+        },
+        error: function(xhr){
+          console.log("ERROR: "+xhr.responseJSON.errors.join(','));
+        }
+    });
 
     document.getElementById('myModal').style.display = 'none';
   }
