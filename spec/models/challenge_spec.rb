@@ -11,7 +11,7 @@ RSpec.describe Challenge, type: :model do
         c.original_content = "carro.color=rojo;"
 
         actual = c.process_content
-        expect(actual).to eq("{carro:{color:'rojo'}}")
+        expect(actual).to eq("{\"carro\":{\"color\":\"rojo\"}}")
     end
 
     it 'Testing Challenge Process Content :: Case 2' do
@@ -19,7 +19,7 @@ RSpec.describe Challenge, type: :model do
         c.original_content = "pared.altura=10;orden.precio=100;"
 
         actual = c.process_content
-        expect(actual).to eq("{pared:{altura:'10'},orden:{precio:'100'}}")
+        expect(actual).to eq("{\"pared\":{\"altura\":\"10\"},\"orden\":{\"precio\":\"100\"}}")
     end
     
 end

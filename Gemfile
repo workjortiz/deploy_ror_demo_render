@@ -21,9 +21,9 @@ gem "jbuilder"
 
 #----[CUSTOM GEMS - BEGIN]----
 
-gem 'country_select', '~> 8.0'
-gem 'jquery-rails'
-gem 'will_paginate', '~> 4.0'
+gem "country_select", "~> 8.0"
+gem "jquery-rails"
+gem "will_paginate", "~> 4.0"
 
 #----[CUSTOM GEMS - END]----
 
@@ -52,7 +52,7 @@ group :development, :test do
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
 
-  gem 'rspec-rails'
+  gem "rspec-rails"
 end
 
 group :development do
