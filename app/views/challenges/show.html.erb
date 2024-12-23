@@ -1,3 +1,35 @@
+<script>
+  function cancelAction(){
+    document.getElementById('myModal').style.display = 'none';
+  }
+
+  function openModalAction(){
+    document.getElementById('myModal').style.display = 'block';
+  }
+  
+  function confirmAction(id){
+    console.log("id: "+id);
+
+    const postData = { id: id };
+    $.ajax({
+        url: '/api/v1/challenges/delete',
+        type: 'POST',
+        data: JSON.stringify(postData),
+        contentType: 'application/json',
+        success: function(response){
+          if(response.success){            
+            window.location.href = '/challenges/delete/success';
+          }
+        },
+        error: function(xhr){
+          console.log("ERROR: "+xhr.responseJSON.errors.join(','));
+        }
+    });
+
+    document.getElementById('myModal').style.display = 'none';
+  }
+
+</script>
 <p style="color: green"><%= notice %></p>
 
 <h3>Tu Resultado</h3>
@@ -13,5 +45,15 @@
 
 <div>
   <%= link_to "Back to challenges", challenges_path %>
-  <%= button_to "Destroy this challenge", @challenge, method: :delete %>
+  <button onclick="openModalAction()">Delete</button>
+</div>
+
+
+<!-- Delete Confirmation Modal -->
+<div id="myModal" class="float-modal">
+  <div  class="content-float-modal">
+    <p><%= t('dialog.confirm.delete_item') %></p>
+    <button onclick="confirmAction(<%= @challenge.id %>)"><%= t('words.confirm') %></button>
+    <button onclick="cancelAction()"><%= t('words.cancel') %></button>
+  </div>
 </div>

@@ -1,5 +1,5 @@
 class ChallengesController < ApplicationController
-  before_action :set_challenge, only: %i[ show destroy ]
+  before_action :set_challenge, only: %i[ destroy ]
 
   require 'net/http'
   require 'json'
@@ -11,6 +11,10 @@ class ChallengesController < ApplicationController
 
   # GET /challenges/1 or /challenges/1.json
   def show
+    @challenge = Challenge.where(id: params[:id]).first
+    if !@challenge.present?
+      redirect_to challenge_delete_success_path
+    end
   end
 
   # GET /challenges/new
