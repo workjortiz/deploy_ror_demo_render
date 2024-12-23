@@ -1,4 +1,7 @@
 en:
+  dialog:
+    confirm:
+      delete_item: "Are you sure delete?"
   will_paginate:
     page_gap: "&hellip;"
     previous_label: "previous"
@@ -25,10 +28,12 @@ en:
         input: "Describe"
         raw: "Original Content"
   words:
-    dynamic: "Dynamic"
-    structure: "Structure"
-    object: "Object"
     attribute: "Attribute"
+    cancel: "Cancel"
+    confirm: "Confirm"
+    dynamic: "Dynamic"
+    object: "Object"
+    structure: "Structure"
     value: "Value"
   sentence:
     describe_examples: "Examples to copy"

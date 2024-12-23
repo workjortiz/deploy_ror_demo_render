@@ -1,4 +1,7 @@
 es:
+  dialog:
+    confirm:
+      delete_item: "Estas seguro eliminar?"
   will_paginate:
     page_gap: "&hellip;"
     previous_label: "atras"
@@ -25,10 +28,12 @@ es:
         input: "Describir"
         raw: "Contenido Original"
   words:
-    dynamic: "Dinamica"
-    structure: "Estructura"
-    object: "Objeto"
     attribute: "Atributo"
+    cancel: "Cancel"
+    confirm: "Confirmar"
+    dynamic: "Dinamica"
+    object: "Objeto"
+    structure: "Estructura"
     value: "Valor"
   sentence:
     describe_examples: "Ejemplos para copiar"
