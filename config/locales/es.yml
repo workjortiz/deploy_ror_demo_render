@@ -15,6 +15,7 @@ es:
         title: "Tu Resultado"
         content_p1: "a continuación el resultado de tu procesamiento de información. Puedes copiarlo o usar el siguiente REST GET con el "
         content_p2: " para obtener el JSON"
+      save: "Registro eliminado con exito"
     form: 
       title: "Bienvenido a mi portafolio"
       instruction_1: "Hagamos algunas dinamicas, pero para empezar ingresa la siguiente información"
