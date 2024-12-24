@@ -4,7 +4,6 @@ class Challenge < ApplicationRecord
     validates :original_content, presence: true, length: {minimum: 10,maximun: 250, message: "must be between 20 and 250 characters"}
 
     def process_content
-
         error_parse_arr = Array.new
         process_string = "{"
         begin
