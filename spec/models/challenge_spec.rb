@@ -4,8 +4,6 @@ require 'rails_helper'
 # rspec spec/models/challenge_spec.rb
 
 RSpec.describe Challenge, type: :model do
- 
-    
     it 'Testing Challenge Process Content :: Case 1' do
         c = Challenge.new
         c.original_content = "carro.color=rojo;"
@@ -21,5 +19,4 @@ RSpec.describe Challenge, type: :model do
         actual = c.process_content
         expect(actual).to eq("{\"pared\":{\"altura\":\"10\"},\"orden\":{\"precio\":\"100\"}}")
     end
-    
 end

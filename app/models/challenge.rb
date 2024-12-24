@@ -1,7 +1,6 @@
 class Challenge < ApplicationRecord
-
-    validates :name, presence: true, length: {minimum: 10, maximum: 50, message: "must be between 10 and 50 characters"}
-    validates :original_content, presence: true, length: {minimum: 10,maximun: 250, message: "must be between 20 and 250 characters"}
+    validates :name, presence: true, length: { minimum: 10, maximum: 50, message: "must be between 10 and 50 characters" }
+    validates :original_content, presence: true, length: { minimum: 10, maximun: 250, message: "must be between 20 and 250 characters" }
 
     def process_content
         error_parse_arr = Array.new
@@ -28,12 +27,12 @@ class Challenge < ApplicationRecord
             error_parse_arr.push("Error no controlado identificado durante fragmentación de la oración.\nTexto ingresado: #{original_content}\nError capturado: #{e}")
         end
 
-        process_string = process_string[0,process_string.length-1] + "}"
+        process_string = process_string[0, process_string.length-1] + "}"
 
         if error_parse_arr.size > 0
-            return error_parse_arr
+            error_parse_arr
+        else
+            process_string
         end
-
-        return process_string
-    end 
+    end
 end

@@ -1,8 +1,8 @@
 class ChallengesController < ApplicationController
   before_action :set_challenge, only: %i[ destroy ]
 
-  require 'net/http'
-  require 'json'
+  require "net/http"
+  require "json"
 
   # GET /challenges or /challenges.json
   def index
@@ -39,7 +39,6 @@ class ChallengesController < ApplicationController
       end
     else
       respond_to do |format|
-
         @challenge.parsing_content = @result
         @challenge.token = SecureRandom.base64(10)
 
