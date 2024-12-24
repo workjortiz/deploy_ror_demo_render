@@ -27,12 +27,12 @@ class Challenge < ApplicationRecord
             error_parse_arr.push("Error no controlado identificado durante fragmentación de la oración.\nTexto ingresado: #{original_content}\nError capturado: #{e}")
         end
 
-        process_string = process_string[0,process_string.length-1] + "}"
+        process_string = process_string[0, process_string.length-1] + "}"
 
         if error_parse_arr.size > 0
             return error_parse_arr
+        else
+            return process_string
         end
-
-        return process_string
     end 
 end
