@@ -11,6 +11,10 @@ en:
     action:
       new: "New Challenge"
       create: "Create Challenge"
+      show:
+        title: "Your Result"
+        content_p1: "next is the result of processing the information. You can copy or use the next REST GET using the "
+        content_p2: " to view the JSON"
     form: 
       title: "Welcome to my portfolio"
       instruction_1: "Let's do some dynamics, but to start enter the following information"
@@ -42,6 +46,7 @@ en:
     confirm: "Confirm"
     delete: "Delete"
     dynamic: "Dynamic"
+    hello: "Hello"
     object: "Object"
     structure: "Structure"
     value: "Value"
