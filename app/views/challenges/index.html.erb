@@ -2,10 +2,10 @@
 
 <% content_for :title, "Challenges" %>
 
-<h1>Challenges</h1>
+<h1><%= t('challenge.title') %></h1>
 
 
-<%= link_to "(+) New Challenge", new_challenge_path, class: 'round-btn' %>
+<%= link_to "(+) "+t('challenge.action.new'), new_challenge_path, class: 'round-btn' %>
 
 <div class="digg_pagination">
   <%= will_paginate @challenges, :previous_label => t("will_paginate.previous_label"), :next_label => t("will_paginate.next_label"), :container => false %>
@@ -14,10 +14,10 @@
 <table>
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Country</th>
-      <th>Content Summary</th>
-      <th>Created At</th>
+      <th><%= t('challenge.attr.name.raw') %></th>
+      <th><%= t('challenge.attr.country.raw') %></th>
+      <th><%= t('challenge.attr.content_summary.raw') %></th>
+      <th><%= t('challenge.attr.created_at.raw') %></th>
       <th></th>
     </tr>
   </thead>
