@@ -7,7 +7,7 @@
     document.getElementById('myModal').style.display = 'block';
   }
   
-  function confirmAction(id){
+  function confirmAction(id, i18n){
     console.log("id: "+id);
 
     const postData = { id: id };
@@ -18,7 +18,7 @@
         contentType: 'application/json',
         success: function(response){
           if(response.success){            
-            window.location.href = '/challenges/delete/success';
+            window.location.href = '/challenges/delete/success?locale='+i18n;
           }
         },
         error: function(xhr){
@@ -53,7 +53,7 @@
 <div id="myModal" class="float-modal">
   <div  class="content-float-modal">
     <p><%= t('dialog.confirm.delete_item') %></p>
-    <button onclick="confirmAction(<%= @challenge.id %>)"><%= t('words.confirm') %></button>
+    <button onclick="confirmAction(<%= @challenge.id %>, '<%= params[:locale] %>')"><%= t('words.confirm') %></button>
     <button onclick="cancelAction()"><%= t('words.cancel') %></button>
   </div>
 </div>
