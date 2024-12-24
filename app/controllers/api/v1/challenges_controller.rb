@@ -1,5 +1,4 @@
 class Api::V1::ChallengesController < ApplicationController
-  
   require "json"
   skip_before_action :verify_authenticity_token
 
@@ -13,7 +12,7 @@ class Api::V1::ChallengesController < ApplicationController
           success: true,
           data: JSON.parse(this_challenge.parsing_content.to_s)
         }
-      else 
+      else
         render status: 200,
         json: {
           success: false,
@@ -54,5 +53,4 @@ class Api::V1::ChallengesController < ApplicationController
         }
     end
   end
-
 end
