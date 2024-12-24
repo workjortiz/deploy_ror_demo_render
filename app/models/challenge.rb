@@ -30,9 +30,9 @@ class Challenge < ApplicationRecord
         process_string = process_string[0, process_string.length-1] + "}"
 
         if error_parse_arr.size > 0
-            return error_parse_arr
+            error_parse_arr
         else
-            return process_string
+            process_string
         end
-    end 
+    end
 end
