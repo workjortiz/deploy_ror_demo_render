@@ -1,6 +1,7 @@
 class Api::V1::ChallengesController < ApplicationController
   
   require "json"
+  skip_before_action :verify_authenticity_token
 
   def show
     token = params[:token]
