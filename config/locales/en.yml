@@ -63,3 +63,4 @@ en:
     example_pgr_4: "pizza.type=XL;"
     example_str_5: "The phone model is Flip6"
     example_pgr_5: "phone.model=Flip6;"
+    successful_save: "Entry was successfully created."
