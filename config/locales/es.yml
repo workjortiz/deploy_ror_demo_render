@@ -63,3 +63,4 @@ es:
     example_pgr_4: "pizza.tipo=XL;"
     example_str_5: "El modelo de teléfono es Flip6"
     example_pgr_5: "telefono.modelo=Flip6;"
+    successful_save: "Registro exitosamente creado."

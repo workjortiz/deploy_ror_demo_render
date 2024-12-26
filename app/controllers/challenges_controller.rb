@@ -1,5 +1,4 @@
 class ChallengesController < ApplicationController
-  before_action :set_challenge, only: %i[ destroy ]
 
   require "net/http"
   require "json"
@@ -22,10 +21,6 @@ class ChallengesController < ApplicationController
     @challenge = Challenge.new
   end
 
-  # GET /challenges/1/edit
-  def edit
-  end
-
   # POST /challenges or /challenges.json
   def create
     @challenge = Challenge.new(challenge_params)
@@ -44,7 +39,7 @@ class ChallengesController < ApplicationController
 
         if @challenge.save
           puts "MODEL SAVE"
-          format.html { redirect_to @challenge, notice: "Challenge was successfully created." }
+          format.html { redirect_to @challenge, notice: I18n.t('sentence.successful_save') }
         else
           puts "ERRORS VALIDATE"
           format.html { render :new, status: :unprocessable_entity }
@@ -54,22 +49,7 @@ class ChallengesController < ApplicationController
     end
   end
 
-  # DELETE /challenges/1 or /challenges/1.json
-  def destroy
-    @challenge.destroy!
-
-    respond_to do |format|
-      format.html { redirect_to challenges_path, status: :see_other, notice: "Challenge was successfully destroyed." }
-      format.json { head :no_content }
-    end
-  end
-
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_challenge
-      @challenge = Challenge.find(params[:id])
-    end
-
     # Only allow a list of trusted parameters through.
     def challenge_params
       params.require(:challenge).permit(:name, :country, :original_content, :parsing_content, :token)
