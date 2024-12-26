@@ -1,5 +1,4 @@
 class ChallengesController < ApplicationController
-
   require "net/http"
   require "json"
 
@@ -39,7 +38,7 @@ class ChallengesController < ApplicationController
 
         if @challenge.save
           puts "MODEL SAVE"
-          format.html { redirect_to @challenge, notice: I18n.t('sentence.successful_save') }
+          format.html { redirect_to @challenge, notice: I18n.t("sentence.successful_save") }
         else
           puts "ERRORS VALIDATE"
           format.html { render :new, status: :unprocessable_entity }
